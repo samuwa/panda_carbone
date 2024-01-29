@@ -1,8 +1,38 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from pandasai import PandasAI
-from pandasai.llm.openai import OpenAI
+from pandasai import SmartDataframe
+from pandasai.callbacks import BaseCallback
+from pandasai.llm import OpenAI
+from pandasai.responses.response_parser import ResponseParser
+
+
+class StreamlitCallback(BaseCallback):
+    def __init__(self, container) -> None:
+        """Initialize callback handler."""
+        self.container = container
+
+    def on_code(self, response: str):
+        self.container.code(response)
+
+
+class StreamlitResponse(ResponseParser):
+    def __init__(self, context) -> None:
+        super().__init__(context)
+
+    def format_dataframe(self, result):
+        st.dataframe(result["value"])
+        return
+
+    def format_plot(self, result):
+        st.image(result["value"])
+        return
+
+    def format_other(self, result):
+        st.write(result["value"])
+        return
+
+
 
 st.set_page_config(layout='wide')
 
@@ -87,21 +117,21 @@ col2.dataframe(ventas_y_unidades, hide_index=True)
 # Preguntas
 
 
-# Initialize OpenAI for PandasAI
-openai_key = st.secrets['OPENAI']  # Replace with your OpenAI API key
-llm = OpenAI(api_key=openai_key)
-pandas_ai = PandasAI(llm, df)
-# Streamlit app layout
-st.title("Data Analysis Chat")
-st.markdown("Ask questions about the data in natural language")
-# Chat input
-user_query = st.text_input("Enter your question:")
+query = st.text_area("🗣️ Chat with Dataframe")
+container = st.container()
 
-if user_query:
-    # Get response from PandasAI
-    response = pandas_ai.ask(user_query)
-    # Display response
-    st.write(response)
+if query:
+    llm = OpenAI(api_token=st.secrets["OPENAI"])
+    query_engine = SmartDataframe(
+        df,
+        config={
+            "llm": llm,
+            "response_parser": StreamlitResponse,
+            "callback": StreamlitCallback(container),
+        },
+    )
+
+    answer = query_engine.chat(query)
 
 
 
