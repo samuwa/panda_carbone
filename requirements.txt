@@ -9,5 +9,5 @@ plotly.express
 folium
 streamlit_folium
 pillow
-pandasai
+pandasai==1.4.10
 openai
