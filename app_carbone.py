@@ -99,7 +99,7 @@ col2.dataframe(ventas_y_unidades, hide_index=True)
 
 
 prompt = st.text_area("Pregúntale algo a la data :wizard:")
-adf = SmartDataframe(df, config={'llm':llm}
+adf = SmartDataframe(df, config={'llm':llm})
 # Generate output
 if st.button("Preguntas"):
     if prompt:
