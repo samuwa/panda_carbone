@@ -1,37 +1,14 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from pandasai import SmartDataframe
-from pandasai.callbacks import BaseCallback
-from pandasai.llm import OpenAI
-from pandasai.responses.response_parser import ResponseParser
 
+from pandasai import PandasAI
+from pandasai.llm.openai import OpenAI
 
-class StreamlitCallback(BaseCallback):
-    def __init__(self, container) -> None:
-        """Initialize callback handler."""
-        self.container = container
+llm = OpenAI(st.secrets['OPENAI'])
 
-    def on_code(self, response: str):
-        self.container.code(response)
-
-
-class StreamlitResponse(ResponseParser):
-    def __init__(self, context) -> None:
-        super().__init__(context)
-
-    def format_dataframe(self, result):
-        st.dataframe(result["value"])
-        return
-
-    def format_plot(self, result):
-        st.image(result["value"])
-        return
-
-    def format_other(self, result):
-        st.write(result["value"])
-        return
-
+# create PandasAI object, passing the LLM
+pandas_ai = PandasAI(llm)
 
 
 st.set_page_config(layout='wide')
@@ -117,22 +94,16 @@ col2.dataframe(ventas_y_unidades, hide_index=True)
 # Preguntas
 
 
-query = st.text_area("🗣️ Chat with Dataframe")
-container = st.container()
+prompt = st.text_area("Pregúntale algo a la data :wizard:")
 
-if query:
-    llm = OpenAI(api_token=st.secrets["OPENAI"])
-    query_engine = SmartDataframe(
-        df,
-        config={
-            "llm": llm,
-            "response_parser": StreamlitResponse,
-            "callback": StreamlitCallback(container),
-        },
-    )
-
-    answer = query_engine.chat(query)
-
+# Generate output
+if st.button("Preguntas"):
+    if prompt:
+        # call pandas_ai.run(), passing dataframe and prompt
+        with st.spinner("Pensando..."):
+            st.write(pandas_ai.run(df, prompt))
+    else:
+        pass
 
 
 
