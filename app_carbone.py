@@ -101,7 +101,7 @@ if st.button("Preguntas"):
     if prompt:
         # call pandas_ai.run(), passing dataframe and prompt
         with st.spinner("Pensando..."):
-            st.write(adf.chat(prompt))
+            st.subheader(adf.chat(prompt))
     else:
         pass
 
