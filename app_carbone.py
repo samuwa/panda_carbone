@@ -9,10 +9,6 @@ llm = OpenAI(api_token=st.secrets['OPENAI'])
 
 
 
-llm = OpenAI(st.secrets['OPENAI'])
-
-# create PandasAI object, passing the LLM
-pandas_ai = PandasAI(llm)
 
 
 st.set_page_config(layout='wide')
