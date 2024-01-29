@@ -87,22 +87,21 @@ col2.dataframe(ventas_y_unidades, hide_index=True)
 # Preguntas
 
 
- # Initialize OpenAI for PandasAI
- openai_key = st.secrets['OPENAI']  # Replace with your OpenAI API key
- llm = OpenAI(api_key=openai_key)
- pandas_ai = PandasAI(llm, df)
- # Streamlit app layout
- st.title("Data Analysis Chat")
- st.markdown("Ask questions about the data in natural language")
+# Initialize OpenAI for PandasAI
+openai_key = st.secrets['OPENAI']  # Replace with your OpenAI API key
+llm = OpenAI(api_key=openai_key)
+pandas_ai = PandasAI(llm, df)
+# Streamlit app layout
+st.title("Data Analysis Chat")
+st.markdown("Ask questions about the data in natural language")
+# Chat input
+user_query = st.text_input("Enter your question:")
 
- # Chat input
- user_query = st.text_input("Enter your question:")
-
- if user_query:
-     # Get response from PandasAI
-     response = pandas_ai.ask(user_query)
-     # Display response
-     st.write(response)
+if user_query:
+    # Get response from PandasAI
+    response = pandas_ai.ask(user_query)
+    # Display response
+    st.write(response)
 
 
 
