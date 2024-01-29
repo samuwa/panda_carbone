@@ -102,7 +102,7 @@ if st.button("Preguntar"):
         # call pandas_ai.run(), passing dataframe and prompt
         with st.spinner("Pensando..."):
             respuesta = adf.chat(f"{prompt}. si tu respuesta es un porcentaje, asegurate de que el formato de tu respuesta incluya dos decimales y el símbolo %. Si tu respuesta es una cifra monetaria, debe tener dos decimales y el símbolo $ al principio. Si la pregunta es irrelevante, responde 'intenta otra pregunta'")
-            if 
+            st.write(respuesta)
     else:
         pass
 
