@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-from pandasai import PandasAI
-from pandasai.llm.openai import OpenAI
+from pandasai import SmartDataframe
+from pandasai import OpenAI
+
+llm = OpenAI(api_token=st.secrets['OPENAI'])
+
+
 
 llm = OpenAI(st.secrets['OPENAI'])
 
@@ -95,13 +99,13 @@ col2.dataframe(ventas_y_unidades, hide_index=True)
 
 
 prompt = st.text_area("Pregúntale algo a la data :wizard:")
-
+adf = SmartDataframe(df, config={'llm':llm}
 # Generate output
 if st.button("Preguntas"):
     if prompt:
         # call pandas_ai.run(), passing dataframe and prompt
         with st.spinner("Pensando..."):
-            st.write(pandas_ai.run(df, prompt))
+            st.write(adf.chat(prompt))
     else:
         pass
 
