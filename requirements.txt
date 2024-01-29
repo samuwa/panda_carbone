@@ -1,0 +1,13 @@
+matplotlib
+streamlit
+pandas
+seaborn
+numpy
+statsmodels
+pydeck
+plotly.express
+folium
+streamlit_folium
+pillow
+pandasai
+openai
