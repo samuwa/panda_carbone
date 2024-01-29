@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 from pandasai import SmartDataframe
-from pandasai import OpenAI
+from pandasai.llm import OpenAI
 
 llm = OpenAI(api_token=st.secrets['OPENAI'])
 
