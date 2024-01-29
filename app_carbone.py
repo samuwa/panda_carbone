@@ -138,7 +138,7 @@ with col2.expander("Bubble.io"):
 
 
 with col3.expander("ChatGPT"):
-    st.write("El mundo cambió con ChatGPT, aunque no todo el mundo se haya dado cuenta. La innovación del presente depende de implementar inteligencia artificial en la operación continua de cualquier organización. ChatGPT abrió el universo de la inteligencia artificial para todo el que quiera aprovecharlo, nosotros ya nos montamos en la ola. :surfer:")
+    st.write("ChatGPT abrió el universo de la inteligencia artificial para todo el que quiera aprovecharlo, nosotros ya nos montamos en la ola. :surfer:")
 
 
 
