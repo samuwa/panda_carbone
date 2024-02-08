@@ -117,7 +117,7 @@ if st.button("Preguntar"):
 
 st.markdown("####")
 
-st.subheader("3. Automatización de Procesos y Aplicaciones Inegrales")
+st.subheader("3. Automatización de Procesos y Aplicaciones Integrales")
 st.write("Utilizando las herramientas más versátiles y avanzadas del mercado, desarrollamos soluciones a la medida a una velocidad incomparable.")
 st.markdown("###")
 col1, col2, col3 = st.columns(3)
