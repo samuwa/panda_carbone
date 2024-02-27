@@ -146,7 +146,7 @@ with tab2:
 
 with tab1:
 
-    st.subheader("Qué es PanDa")
+    st.subheader("Qué es PanDa?")
 
     st.markdown('''En PanDa, entendemos que cada empresa es única, con desafíos y necesidades distintas. Nuestro enfoque no es vender soluciones prefabricadas en un proceso estático de descubrimiento, experimentación y desarrollo. Al contrario, observamos que este método tradicional a menudo conduce a conclusiones predecibles, que no solo son ineficaces sino que también interfieren con el rendimiento de los empleados y requieren de inversiones significativas en herramientas costosas.
 
