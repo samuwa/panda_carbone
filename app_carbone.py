@@ -164,15 +164,15 @@ En PanDa, no solo estamos comprometidos con el desarrollo de soluciones tecnoló
 
 with tab3:
     st.subheader("Propuesta Comercial")
-    st.markdown('''Nuestro modelo de negocio en Panama Data Consulting (PanDa) se basa en una relación de colaboración continua con nuestros clientes. Ofrecemos un servicio de suscripción mensual a un costo fijo de $2400, que permite a nuestros clientes acceder a nuestro equipo de desarrollo para trabajar en soluciones personalizadas, una a la vez. Este enfoque garantiza que cada proyecto reciba la atención detallada que merece, maximizando el valor y la efectividad de cada solución.
+    st.markdown('''Nuestro modelo de negocio en Panama Data Consulting (PanDa) se basa en una relación de colaboración continua con nuestros clientes. Ofrecemos un servicio de **suscripción mensual de $2400**, que permite a nuestros clientes acceder a nuestro equipo de desarrollo para trabajar en soluciones personalizadas, una a la vez. Este enfoque garantiza que cada proyecto reciba la atención detallada que merece, maximizando el valor y la efectividad de cada solución.
 
 La suscripción mensual incluye:
 
-Desarrollo de herramientas a medida basado en las necesidades específicas del cliente.
-Trabajo en proyectos de manera secuencial, asegurando calidad y enfoque.
-Sin costos ocultos para el acceso a las herramientas desarrolladas.
-Los costos asociados con servicios de terceros, como APIs o herramientas específicas pagadas, no están incluidos en la tarifa mensual. Sin embargo, la decisión de utilizar estas herramientas de terceros se basa siempre en un análisis cuidadoso del retorno de la inversión (ROI), con el objetivo de asegurar que el uso de cualquier servicio adicional justifique su costo.
+ - Desarrollo de herramientas a medida basado en las necesidades específicas del cliente.
+ - Trabajo en proyectos de manera secuencial, asegurando calidad y enfoque.
+ - Sin costos ocultos para el acceso a las herramientas desarrolladas.
 
+Los costos asociados con servicios de terceros, como APIs o herramientas específicas pagadas, no están incluidos en la tarifa mensual. Sin embargo, la decisión de utilizar estas herramientas de terceros se basa siempre en un análisis cuidadoso del retorno de la inversión (ROI), con el objetivo de asegurar que el uso de cualquier servicio adicional justifique su costo.
 Nuestra meta es ser más que un proveedor; queremos ser parte del equipo de nuestros clientes, construyendo sobre la infraestructura existente y adaptándonos a sus necesidades cambiantes con soluciones eficientes y efectivas. Este modelo no solo ofrece claridad y previsibilidad en los costos, sino que también fomenta una asociación estratégica a largo plazo, centrada en el crecimiento y la innovación continua.''')
 
 
