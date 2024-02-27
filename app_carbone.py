@@ -163,7 +163,7 @@ Nuestra consultoría abarca tres categorías principales: automatización de pro
 En PanDa, no solo estamos comprometidos con el desarrollo de soluciones tecnológicas avanzadas; estamos redefiniendo lo que significa ser una consultoría de tecnología en el siglo XXI. Con un enfoque en soluciones personalizadas, eficiencia y la vanguardia de la innovación, PanDa está preparada para liderar a las empresas hacia un futuro digital más inteligente y adaptado a sus necesidades únicas.''')
 
 with tab3:
-    st.subheader("Propuesta Comercial"):
+    st.subheader("Propuesta Comercial")
     st.markdown('''Nuestro modelo de negocio en Panama Data Consulting (PanDa) se basa en una relación de colaboración continua con nuestros clientes. Ofrecemos un servicio de suscripción mensual a un costo fijo de $2400, que permite a nuestros clientes acceder a nuestro equipo de desarrollo para trabajar en soluciones personalizadas, una a la vez. Este enfoque garantiza que cada proyecto reciba la atención detallada que merece, maximizando el valor y la efectividad de cada solución.
 
 La suscripción mensual incluye:
